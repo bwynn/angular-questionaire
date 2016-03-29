@@ -1,0 +1,36 @@
+<form novalidate class="panel-body user-prefs">
+  <div class="form-group" ng-class="{active:isSet(1)}">
+    <h2>Climbing vs. Descending</h2><span>1 of 3 questions</span>
+    <p>Would you rather have a bike that climbs well, or one that goes downhill well? Or one bike to rule them all?</p>
+    <input type="range" min="0" max="100" ng-model="climb">
+    <div class='show-range'><span class="min-val">Descending</span><span class="max-val">Climbing</span></div>
+    <button ng-click="setQuestion(2)" class="btn btn-success next-btn">Next Question</button>
+  </div>
+
+  <div class="form-group" ng-class="{active:isSet(2)}">
+    <h2>Stable vs. Nimble</h2><span>2 of 3 questions</span>
+    <p>Would you rather have a bike that you feel stable and confident on, or one that follows your lead?</p>
+    <input type="range" min="0" max="100" ng-model="stability">
+    <div class='show-range'><span class="min-val">Nimble</span><span class="max-val">Stable</span></div>
+    <button ng-click="setQuestion(1)" class='btn btn-default'>Previous Question</button>
+    <button ng-click="setQuestion(3)" class="btn btn-success next-btn">Next Question</button>
+  </div>
+
+  <div class="form-group" ng-class="{active:isSet(3)}">
+    <h2>Technical Prowess</h2><span>3 of 3 questions</span>
+    <p>Are you planning on riding technical trails? Or would you like to be able to? Use the slider below to indicate how technical the terrain that you'll be riding is.</p>
+    <input type="range" min="0" max="100" ng-model="technical">
+    <div class="show-range"><span class="min-val">Not Technical</span><span class="max-val">Very Technical.</span></div>
+    <button ng-click="setQuestion(2)" class='btn btn-default'>Previous Question</button>
+    <button ng-click="setQuestion(4)" class="btn btn-success next-btn">Next Question</button>
+  </div>
+
+  <div class="form-group" ng-class="{active:isSet(4)}">
+    <h2>Review your answers</h2>
+    <p><strong>Bike's Strengths:</strong> {{strengths}}</p>
+    <p><strong>Bike Stability:</strong> {{stablePrefs}}</p>
+    <p><strong>Ride Technicality:</strong> {{techPrefs}}</p>
+    <button ng-click="setQuestion(3)" class='btn btn-default'>Previous Question</button>
+    <button class='btn btn-primary' ng-click="submit()">Click to get your suggested bike!</button>
+  </div>
+</form>
