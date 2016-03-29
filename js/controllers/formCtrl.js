@@ -1,5 +1,5 @@
 angular.module('FormCtrl', [])
-  .controller('formCtrl', ['$scope', '$location', function($scope, $location) {
+  .controller('formCtrl', ['$scope', '$location', '$rootScope', function($scope, $location, $rootScope) {
 
     $scope.prefs = {}; // object to contain user preferences
 
@@ -45,8 +45,10 @@ angular.module('FormCtrl', [])
 
       $scope.question = null; // set question value to null, hide all questions
 
+      $scope.$emit('preferenceEmit', {prefs: $scope.prefs})
+
       console.log($scope.prefs);
-      $location.path('/results'); // go to the results page 
+      $location.path('/results'); // go to the results page
     };
 
     // conditional to determine the users asc/desc preferences

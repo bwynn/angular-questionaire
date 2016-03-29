@@ -1,1 +1,1 @@
-angular.module('myApp', ['ngRoute', 'AppRoutes', 'FormCtrl', 'ResultsCtrl']);
+angular.module('myApp', ['ngRoute', 'AppRoutes', 'FormCtrl', 'MainCtrl', 'ResultsCtrl']);

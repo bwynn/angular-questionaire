@@ -3,12 +3,13 @@
 
   <head>
     <title>Find Your MTB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/main.css" />
   </head>
 
   <body>
-      <div ng-view></div>
+      <div ng-view class="container"></div>
 
       <!-- Libs -->
       <script src="libs/angular/angular.min.js"></script>
@@ -16,6 +17,7 @@
       <script src="libs/ngAnimate/js/angular-animate.min.js"></script>
 
       <!-- controllers -->
+      <script src="js/controllers/mainCtrl.js"></script>
       <script src="js/controllers/formCtrl.js"></script>
       <script src="js/controllers/resultsCtrl.js"></script>
       <!-- services -->
