@@ -45,7 +45,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   height: 10px;
   cursor: pointer;
   box-shadow: 3px 3px 3px #9a9a9a;
-  background: #5bc0de;
+  background: #fff;
   border-radius: 2px;
   border: 1px solid black; }
 
@@ -57,7 +57,7 @@ input[type="range"]::-moz-range-track {
   height: 10px;
   cursor: pointer;
   box-shadow: 3px 3px 3px #9a9a9a;
-  background: #5bc0de;
+  background: #fff;
   border-radius: 2px;
   border: 1px solid black; }
 
@@ -71,7 +71,7 @@ input[type="range"]::-ms-track {
   height: 10px;
   cursor: pointer;
   box-shadow: 3px 3px 3px #9a9a9a;
-  background: #5bc0de;
+  background: #fff;
   border-radius: 2px;
   border: 1px solid black; }
 
@@ -104,8 +104,12 @@ input[type="range"]::-ms-track {
     left: 0; }
   .user-prefs .form-group .next-btn {
     float: right; }
-  .user-prefs .form-group .mtn-icon {
+  .user-prefs .form-group .mtn-icon,
+  .user-prefs .form-group .stability-icon {
     height: 100px; }
+
+.user-prefs .review.form-group p {
+  margin: .5em 0; }
 
 @keyframes visible {
   from {

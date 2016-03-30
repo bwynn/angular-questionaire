@@ -33,7 +33,7 @@ $mtn-brown: #A17746;
   height: 10px;
   cursor: pointer;
   box-shadow: 3px 3px 3px #9a9a9a;
-  background: #5bc0de;
+  background: #fff; //#5bc0de
   border-radius: 2px;
   border: 1px solid black;
 }
@@ -132,8 +132,15 @@ input[type="range"]::-ms-track {
   .next-btn {
     float: right;
   }
-  .mtn-icon {
+  .mtn-icon,
+  .stability-icon {
     height: 100px;
+  }
+}
+
+.user-prefs .review.form-group {
+  p {
+    margin: .5em 0;
   }
 }
 
