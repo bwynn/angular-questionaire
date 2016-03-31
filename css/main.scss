@@ -101,6 +101,7 @@ input[type="range"]::-ms-track {
   top: 34px;
   left: $hundo * 2;
   animation: 1s invisible;
+  display: none;
   h2 {
     float: left;
     &.review-headline {
@@ -124,10 +125,14 @@ input[type="range"]::-ms-track {
   p {
     margin: 3em 0 0 0;
     font-size: 1.2em;
+    &.pref {
+      margin: 1em 0;
+    }
   }
   &.active {
     animation: 1s visible;
     left: 0;
+    display: block;
   }
   .next-btn {
     float: right;

@@ -13,6 +13,7 @@
       <polygon points="2000,0 2000,100 0,100" fill="url(#mtn-gradient)"/>
     </svg>
     <div class='show-range'><span class="min-val">Descending</span><span class="max-val">Climbing</span></div>
+    <p class="pref"><strong>Your Preference:</strong> {{strengths}}</p>
     <button ng-click="setQuestion(2)" class="btn btn-info next-btn">Next Question</button>
   </div>
 
@@ -21,6 +22,7 @@
     <p>Would you rather have a bike that you feel stable and confident on, or one that follows your lead?</p>
     <input type="range" min="0" max="100" ng-model="stability">
     <div class='show-range'><span class="min-val">Nimble</span><span class="max-val">Stable</span></div>
+    <p class="pref"><strong>Your Preference:</strong> {{stablePrefs}}</p>
     <button ng-click="setQuestion(1)" class='btn btn-info'>Previous Question</button>
     <button ng-click="setQuestion(3)" class="btn btn-info next-btn">Next Question</button>
   </div>
@@ -30,6 +32,7 @@
     <p>Are you planning on riding technical trails? Or would you like to be able to? Use the slider below to indicate how technical the terrain that you'll be riding is.</p>
     <input type="range" min="0" max="100" ng-model="technical">
     <div class="show-range"><span class="min-val">Not Technical</span><span class="max-val">Very Technical.</span></div>
+    <p class="pref"><strong>Your Preference:</strong> {{techPrefs}}</p>
     <button ng-click="setQuestion(2)" class='btn btn-info'>Previous Question</button>
     <button ng-click="setQuestion(4)" class="btn btn-info next-btn">Next Question</button>
   </div>

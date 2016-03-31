@@ -5,15 +5,12 @@ angular.module('FormCtrl', [])
 
     // CLIMBING VARS
     $scope.climb = "50"; // set default value
-    $scope.strengths = "Both climbing and descending";
 
     // STABILITY VARS
     $scope.stability = "50"; // set default value;
-    $scope.stablePrefs = "Feels good and balanced under your feet";
 
     // add scope and technical prowess
     $scope.technical = "50"; // set default value
-    $scope.techPrefs = "A good all-rounder";
 
     // set default value for question picker
     $scope.question = 1;
@@ -26,10 +23,6 @@ angular.module('FormCtrl', [])
       $scope.question = questionId;
 
       $scope.results = false;
-
-      climbCheck(); // run climb conditional
-      stabilityCheck(); // run stability conditionals
-      technicalCheck(); // run technical ride expectations conditional
     };
 
     // returns the id when selected
@@ -47,49 +40,67 @@ angular.module('FormCtrl', [])
 
       $scope.$emit('preferenceEmit', {prefs: $scope.prefs})
 
-      console.log($scope.prefs);
+      //console.log($scope.prefs);
       $location.path('/results'); // go to the results page
     };
 
     // conditional to determine the users asc/desc preferences
-    function climbCheck() {
+    // watches the $scope.climb ng-model to update the values as the user changes their preference values
+    $scope.$watch("climb", function(newValue, oldValue) {
       if ($scope.climb > 66) {
         $scope.strengths = "Climbing";
       }
       else if ($scope.climb <= 33) {
         $scope.strengths = "Descending";
       }
-    }
+      else {
+        $scope.strengths = "Both climbing and descending";
+      }
+    });
 
-    function stabilityCheck() {
+    // watches the $scope.stability ng-model to update the user values as they change their preferences
+    $scope.$watch("stability", function() {
       if ($scope.stability < 33) {
         $scope.stablePrefs = "A bike that holds the line you choose, nimble and quick handling";
       }
       else if ($scope.stability > 66) {
         $scope.stablePrefs = "A bike that you will feel comfortable and confident on.";
       }
-    }
+      else {
+        $scope.stablePrefs = "Feels good and balanced under your feet";
+      }
+    });
 
-    function technicalCheck() {
+    // watches $scope.technical to update when user does.
+    $scope.$watch("technical", function() {
       if ($scope.technical < 33) {
         $scope.techPrefs = "Fire roads, gravel, moderate single-track. Expected rides not terribly technical.";
       }
       else if ($scope.technical > 66) {
         $scope.techPrefs = "Roots, rocks, steep climbs and descents, jumps. Expected rides will be gnar.";
       }
-    }
+      else {
+        $scope.techPrefs = "A good all-rounder";
+      }
+    });
 
   }]);
 
   // KEY
 
+  // CLIMB_FACTOR ////////////////
+
   // DH = Downhill Oriented
   // Trail = 50/50 - trail bike
   // XC = Uphill Oriented
 
+  // GEOMETRY ////////////////
+
   // CASUAL = Not Technical - headtube angle not dependent
   // MED = Somewhat technical
   // AGGRESSIVE = VERY TECHNICAL
+
+  // WHEEL BASE ///////////////
 
   // EXPERIENCED = Short wheel base - nimble
   // INTERMEDIATE = Medium length wheel base
